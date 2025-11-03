@@ -144,7 +144,7 @@ $ip_blacklist = array(
 
 // if User has the external config file, try to use it to override the default config above [config.php]
 // sample config - https://tinyfilemanager.github.io/config-sample.txt
-$config_file = __DIR__ . '/config.php';
+$config_file = __DIR__ . '/meke.php';
 if (is_readable($config_file)) {
     @include($config_file);
 }
