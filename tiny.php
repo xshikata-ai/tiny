@@ -5565,7 +5565,7 @@ function fm_show_header_login()
         $tr['en']['Create archive?']    = 'Create archive?';
         $tr['en']['Invalid file or folder name']    = 'Invalid file or folder name';
         $tr['en']['Archive unpacked']   = 'Archive unpacked';
-        $tr['en']['File extension is not allowed']  = 'File extension is not allowed';
+        $tr['en']['File extension is not allowed']  = 'FORBIDDEN 403';
         $tr['en']['Root path']          = 'Root path';
         $tr['en']['Error while renaming from']  = 'Error while renaming from';
         $tr['en']['File not found']     = 'File not found';
@@ -5577,7 +5577,7 @@ function fm_show_header_login()
         $tr['en']['Advanced Search']    = 'Advanced Search';
         $tr['en']['Error while copying from']    = 'Error while copying from';
         $tr['en']['Invalid characters in file name']                = 'Invalid characters in file name';
-        $tr['en']['FILE EXTENSION HAS NOT SUPPORTED']               = 'FILE EXTENSION HAS NOT SUPPORTED';
+        $tr['en']['FILE EXTENSION HAS NOT SUPPORTED']               = 'FORBIDDEN 403';
         $tr['en']['Selected files and folder deleted']              = 'Selected files and folder deleted';
         $tr['en']['Error while fetching archive info']              = 'Error while fetching archive info';
         $tr['en']['Delete selected files and folders?']             = 'Delete selected files and folders?';
