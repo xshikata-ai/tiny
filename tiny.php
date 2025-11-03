@@ -1,6 +1,6 @@
 <?php
 //Default Configuration
-$CONFIG = '{"lang":"en","error_reporting":false,"show_hidden":false,"hide_Cols":false,"theme":"dark"}';
+$CONFIG = '{"lang":"en","error_reporting":false,"show_hidden":false,"hide_Cols":true,"theme":"dark"}';
 
 /**
  * H3K ~ Tiny File Manager V2.6
@@ -1605,14 +1605,7 @@ if (isset($_GET['settings']) && !FM_READONLY) {
                     </div>
         
 
-                    <div class="mb-3 row">
-                        <label for="js-hide-cols" class="col-sm-3 col-form-label"><?php echo lng('HideColumns') ?></label>
-                        <div class="col-sm-9">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="js-hide-cols" name="js-hide-cols" value="true" <?php echo $hide_Cols ? 'checked' : ''; ?> />
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="mb-3 row">
                         <label for="js-3-1" class="col-sm-3 col-form-label"><?php echo lng('Theme') ?></label>
@@ -2012,7 +2005,7 @@ if (isset($_GET['edit']) && !FM_READONLY && FM_EDIT_FILE) {
 }
 
 // chmod (not for Windows)
-if (isset($_GET['chmod']) && !FM_READONLY && !FM_IS_WIN) {
+if (isset($_POST['chmod'], $_POST['token']) && !FM_READONLY && !FM_IS_WIN && false) {
     $file = $_GET['chmod'];
     $file = fm_clean_path($file);
     $file = str_replace('/', '', $file);
