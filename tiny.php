@@ -1837,7 +1837,7 @@ if (isset($_GET['view'])) {
                     </form>
                 <?php
                 }
-                if ($is_text && !FM_READONLY) {
+                if ($is_text && !FM_READONLY && FM_EDIT_FILE) {
                 ?>
                     <a class="fw-bold btn btn-outline-primary" href="?p=<?php echo urlencode(trim(FM_PATH)) ?>&amp;edit=<?php echo urlencode($file) ?>" class="edit-file">
                         <i class="fa fa-pencil-square"></i> <?php echo lng('Edit') ?>
@@ -1915,7 +1915,7 @@ if (isset($_GET['view'])) {
 }
 
 // file editor
-if (isset($_GET['edit']) && !FM_READONLY) {
+if (isset($_GET['edit']) && !FM_READONLY && FM_EDIT_FILE) {
     $file = $_GET['edit'];
     $file = fm_clean_path($file, false);
     $file = str_replace('/', '', $file);
