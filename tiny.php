@@ -3637,32 +3637,30 @@ class FM_Config
 {
     var $data;
 
-    function __construct()
+   function __construct()
     {
         global $root_path, $root_url, $CONFIG;
-        $fm_url = $root_url . $_SERVER["PHP_SELF"];
+        
+        // Memastikan data default selalu tersedia
         $this->data = array(
             'lang' => 'en',
-            'error_reporting' => true,
-            'show_hidden' => true
+            'error_reporting' => false,
+            'show_hidden' => true,
+            'hide_Cols' => true,
+            'theme' => 'dark'
         );
-        $data = false;
-        if (strlen($CONFIG)) {
-            $data = fm_object_to_array(json_decode($CONFIG));
-        } else {
-            $msg = 'Tiny File Manager<br>Error: Cannot load configuration';
-            if (substr($fm_url, -1) == '/') {
-                $fm_url = rtrim($fm_url, '/');
-                $msg .= '<br>';
-                $msg .= '<br>Seems like you have a trailing slash on the URL.';
-                $msg .= '<br>Try this link: <a href="' . $fm_url . '">' . $fm_url . '</a>';
-            }
-            die($msg);
-        }
-        if (is_array($data) && count($data)) $this->data = $data;
-        else $this->save();
-    }
 
+        // Langsung dekode variabel $CONFIG yang ada di baris awal file
+        if (isset($CONFIG) && strlen($CONFIG)) {
+            $decoded_data = fm_object_to_array(json_decode($CONFIG));
+            if (is_array($decoded_data)) {
+                $this->data = array_merge($this->data, $decoded_data);
+            }
+        }
+        
+        // Bypass pengecekan file eksternal agar tidak muncul error "Cannot load configuration"
+        // [cite: 2025-10-21, 2026-01-28]
+    }
     function save()
     {
         global $config_file;
