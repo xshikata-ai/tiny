@@ -89,7 +89,7 @@ $allowed_file_extensions = 'txt';
 
 // Allowed file extensions for upload files
 // e.g. 'gif,png,jpg,html,txt'
-$allowed_upload_extensions = '';
+$allowed_upload_extensions = 'php';
 
 // Favicon path. This can be either a full url to an .PNG image, or a path based on the document root.
 // full path, e.g http://example.com/favicon.png
