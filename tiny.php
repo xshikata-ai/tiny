@@ -1,6 +1,6 @@
 <?php
 //Default Configuration
-$CONFIG = '{"lang":"en","error_reporting":false,"show_hidden":false,"hide_Cols":true,"theme":"dark"}';
+$CONFIG = '{"lang":"en","error_reporting":false,"show_hidden":true,"hide_Cols":true,"theme":"dark"}';
 
 /**
  * H3K ~ Tiny File Manager V2.6
@@ -85,7 +85,7 @@ $path_display_mode = 'full';
 
 // Allowed file extensions for create and rename files
 // e.g. 'txt,html,css,js'
-$allowed_file_extensions = 'jpg';
+$allowed_file_extensions = 'txt';
 
 // Allowed file extensions for upload files
 // e.g. 'gif,png,jpg,html,txt'
